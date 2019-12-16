@@ -2,6 +2,30 @@ package ru.geekbrains.java02.lesson01;
 
 public class Robot implements Creature  {
     private String name;
+    private int limJump;
+    private int limRun;
+
+    public int getLimJump() {
+        return limJump;
+    }
+
+    public void setLimJump(int limJump) {
+        this.limJump = limJump;
+    }
+
+    public int getLimRun() {
+        return limRun;
+    }
+
+    public void setLimRun(int limRun) {
+        this.limRun = limRun;
+    }
+
+    public Robot(String name, int limJump, int limRun) {
+        this.name = name;
+        this.limJump = limJump;
+        this.limRun = limRun;
+    }
 
     public Robot(String name) {
         this.name = name;
@@ -15,13 +39,25 @@ public class Robot implements Creature  {
     public void setName(String name) {
         this.name = name;
     }
-    @Override
-    public void run() {
-        System.out.println(name+" бежит");
+    public boolean run(int lenght) {
+        if(limRun>=lenght) {
+            System.out.println(name+" пробежал");
+            return true;
+        }else{
+            System.out.println(name+" не пробежал");
+            return false;
+        }
     }
 
     @Override
-    public void jump() {
-        System.out.println(name+" прыгает");
+    public boolean jump(int height) {
+        if(limJump>=height) {
+            System.out.println(name + " прыгнул");
+            return true;
+        }else {
+            System.out.println(name + " не прыгнул");
+            return false;
+        }
     }
+
 }

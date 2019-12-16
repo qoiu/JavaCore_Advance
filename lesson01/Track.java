@@ -1,22 +1,22 @@
 package ru.geekbrains.java02.lesson01;
 
 public class Track implements Difficulty {
-    private int lenth;
+    private int length;
 
-    public int getLenth() {
-        return lenth;
+    public int getLength() {
+        return length;
     }
 
-    public void setLenth(int lenth) {
-        this.lenth = lenth;
+    public void setLength(int length) {
+        this.length = length;
     }
 
     public Track(int lenth) {
-        this.lenth = lenth;
+        this.length = lenth;
     }
 
     @Override
-    public void challenge(Creature creature) {
-        creature.run();
+    public boolean challenge(Creature creature) {
+        return creature.run(length);
     }
 }

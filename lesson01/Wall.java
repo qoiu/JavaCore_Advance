@@ -16,7 +16,7 @@ public class Wall implements Difficulty {
     }
 
     @Override
-    public void challenge(Creature creature) {
-        creature.jump();
+    public boolean challenge(Creature creature) {
+        return creature.jump(height);
     }
 }
